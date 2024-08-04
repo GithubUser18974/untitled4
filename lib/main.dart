@@ -194,55 +194,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: ListView(
                   padding: EdgeInsets.only(left: 25),
                   children: [
-                    Row(children: [
-                      Row(
-                        children: [
-                          user_avatar(),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                ('Lora'),
-                                style: TextStyle(color: Colors.black),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                ('Hello, Hope all is well with you'),
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '20:22',
-                            style: TextStyle(fontSize: 10),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 10,
-                            backgroundColor: Colors.tealAccent,
-                            child: Text(
-                              '5',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    ]),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
+                    BuildConversationRow(
+                        "Mohamed Araby", "Hello how are you", 'img2'),
                   ],
                 ),
               ),
@@ -251,6 +220,64 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  Column BuildConversationRow(String name, String msg, String fileName) {
+    return Column(children: [
+      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(
+          children: [
+            user_avatar(),
+            SizedBox(
+              width: 15,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  (name),
+                  style: TextStyle(color: Colors.black),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  (msg),
+                  style: TextStyle(color: Colors.black, fontSize: 12),
+                ),
+              ],
+            ),
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 25, top: 5),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '20:22',
+                style: TextStyle(fontSize: 10),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              CircleAvatar(
+                radius: 10,
+                backgroundColor: Colors.tealAccent,
+                child: Text(
+                  '5',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 10,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )
+      ]),
+      Divider(indent: 60)
+    ]);
   }
 }
 
